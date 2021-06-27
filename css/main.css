@@ -1,0 +1,105 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+:root {
+  --primary-button: rgb(51,51,51);
+  --secondary-button: rgb(113,113,113);
+  --top-button: rgb(165, 165, 165);
+  --top-button-second: rgb(217,217,217);
+  --side-button: rgb(254,159,10);
+  --text-color: rgb(254,255,254);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+
+.calculator-grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 10px;
+  min-height: 100vh;
+  -ms-grid-columns: (100px)[4];
+      grid-template-columns: repeat(4, 100px);
+  -ms-grid-rows: 120px (100px)[5];
+      grid-template-rows: 120px repeat(5, 100px);
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: var(--primary-button);
+  color: var(--text-color);
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: var(--secondary-button);
+}
+
+.span-two {
+  grid-column: span 2;
+  border-radius: 5em;
+  padding-left: 40px;
+  text-align: left;
+}
+
+.top-button {
+  background-color: var(--top-button);
+}
+
+.top-button:hover {
+  background-color: var(--top-button-second);
+}
+
+.side-button {
+  background-color: var(--side-button);
+  padding-bottom: 7px;
+}
+
+.side-button:hover {
+  background-color: var(--text-color);
+  color: var(--side-button);
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+
+.output .previous-operand {
+  color: var(--top-button);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: var(--text-color);
+  font-size: 3rem;
+}
+/*# sourceMappingURL=main.css.map */
